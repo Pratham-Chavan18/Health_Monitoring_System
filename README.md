@@ -33,7 +33,7 @@ Health-System/
 - **Database**: MongoDB (NoSQL), Mongoose ORM
 - **Security**: JWT, bcryptjs, CORS
 - **Testing**: Jest, Supertest
-- **DevOps Ready**: Docker, SonarQube integration possible
+- **DevOps**: Docker, SonarQube integration possible
 
 ## 📦 Installation
 
@@ -115,5 +115,4 @@ docker-compose up --build
 
 ## 📄 License
 
-This project is licensed under the MIT License 
-Hi
+This project is licensed under the MIT License
