@@ -1,0 +1,189 @@
+.prescription-section {
+    animation: fadeSlideIn 0.4s ease-out;
+}
+
+.prescription-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.25rem;
+    min-height: 500px;
+}
+
+.patient-list-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.25rem;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.panel-heading {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 1rem 0;
+}
+
+.patient-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.patient-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 0.75rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+    color: #fff;
+}
+
+.patient-list-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.patient-list-item.selected {
+    background: rgba(108, 99, 255, 0.12);
+    border-color: rgba(108, 99, 255, 0.25);
+}
+
+.list-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.list-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+}
+
+.list-name {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-disease {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.has-rx-icon {
+    color: #22c55e;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.prescription-editor {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.highlight {
+    color: #a78bfa;
+    font-weight: 600;
+}
+
+.rx-textarea {
+    flex: 1;
+    min-height: 300px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 1rem;
+}
+
+.rx-textarea:focus {
+    border-color: #6c63ff;
+}
+
+.rx-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.save-rx-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: box-shadow 0.3s;
+}
+
+.save-rx-btn:hover {
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+}
+
+.editor-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.editor-placeholder p {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .prescription-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-list-panel {
+        max-height: 250px;
+    }
+}
