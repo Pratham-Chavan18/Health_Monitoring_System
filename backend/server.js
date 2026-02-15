@@ -12,7 +12,25 @@ const PORT = process.env.PORT || 5000;
 
 // --------------- Middleware ---------------
 app.use(cors({
-    origin: process.env.CLIENT_URL || '*',
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin) return callback(null, true);
+
+        // List of allowed origins
+        const allowedOrigins = [
+            process.env.CLIENT_URL,
+            'http://localhost:3000' // For local development
+        ];
+
+        // Allow any Vercel deployment URL
+        const isVercelURL = origin.includes('.vercel.app');
+
+        if (allowedOrigins.includes(origin) || isVercelURL) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
